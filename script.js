@@ -1012,20 +1012,28 @@
 (() => {
   "use strict";
 
-  // Same-host API base keeps requests working whether the page is opened from
-  // the Express server, Live Server, or a file URL.
-  const pageHostname =
-    window.location.hostname && window.location.hostname !== ""
-      ? window.location.hostname
-      : "localhost";
-  const apiHostname = pageHostname.includes(":") ? `[${pageHostname}]` : pageHostname;
-  const API_BASE_URL =
-    window.CYBERSAFE_API_URL ||
-    (window.location.protocol === "file:"
-      ? "http://localhost:5000/api"
-      : window.location.port === "5000"
-        ? "/api"
-        : `http://${apiHostname}:5000/api`);
+  // Configured to connect to the deployed Render backend with Vite/CRA env variable support
+  const API_BASE_URL = (() => {
+    let envUrl = "";
+    try {
+      if (typeof import.meta !== "undefined" && import.meta?.env?.VITE_API_URL) {
+        envUrl = import.meta.env.VITE_API_URL;
+      }
+    } catch (e) {}
+    try {
+      if (!envUrl && typeof process !== "undefined" && process?.env?.REACT_APP_API_URL) {
+        envUrl = process.env.REACT_APP_API_URL;
+      }
+    } catch (e) {}
+
+    const rawUrl =
+      (typeof window !== "undefined" && (window.CYBERSAFE_API_URL || window.__CYBERSAFE_API_URL__)) ||
+      envUrl ||
+      "https://cybersafeawareness-backend.onrender.com";
+
+    const clean = String(rawUrl).trim().replace(/\/+$/, "");
+    return clean.endsWith("/api") ? clean : `${clean}/api`;
+  })();
 
   const QUIZZES = {
     passwords: {
@@ -1743,21 +1751,28 @@
 (() => {
   "use strict";
 
-  // Configurable API base URL: honors window.CYBERSAFE_API_URL or defaults to port 5000.
-  // Using the page's hostname keeps the API same-site, so the HttpOnly session
-  // cookie is reused correctly whether the page is opened at localhost or 127.0.0.1.
-  const pageHostname =
-    window.location.hostname && window.location.hostname !== ""
-      ? window.location.hostname
-      : "localhost";
-  const apiHostname = pageHostname.includes(":") ? `[${pageHostname}]` : pageHostname;
-  const API_BASE_URL =
-    window.CYBERSAFE_API_URL ||
-    (window.location.protocol === "file:"
-      ? "http://localhost:5000/api"
-      : window.location.port === "5000"
-        ? "/api"
-        : `http://${apiHostname}:5000/api`);
+  // Configured to connect to the deployed Render backend with Vite/CRA env variable support
+  const API_BASE_URL = (() => {
+    let envUrl = "";
+    try {
+      if (typeof import.meta !== "undefined" && import.meta?.env?.VITE_API_URL) {
+        envUrl = import.meta.env.VITE_API_URL;
+      }
+    } catch (e) {}
+    try {
+      if (!envUrl && typeof process !== "undefined" && process?.env?.REACT_APP_API_URL) {
+        envUrl = process.env.REACT_APP_API_URL;
+      }
+    } catch (e) {}
+
+    const rawUrl =
+      (typeof window !== "undefined" && (window.CYBERSAFE_API_URL || window.__CYBERSAFE_API_URL__)) ||
+      envUrl ||
+      "https://cybersafeawareness-backend.onrender.com";
+
+    const clean = String(rawUrl).trim().replace(/\/+$/, "");
+    return clean.endsWith("/api") ? clean : `${clean}/api`;
+  })();
 
   const trigger = document.getElementById("admin-logo-trigger");
   const dialog = document.getElementById("admin-dialog");
