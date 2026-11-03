@@ -1,0 +1,12 @@
+-- ============================================================
+-- CyberSafe seed data has moved.
+-- ------------------------------------------------------------
+-- Existing educational content is seeded idempotently by:
+--     backend/schema.sql
+--
+-- Administrator accounts are created securely with:
+--     cd backend
+--     npm run create-admin -- <username>
+--
+-- This file is kept only so older references do not break.
+-- ============================================================

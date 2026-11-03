@@ -1,0 +1,10 @@
+-- ============================================================
+-- CyberSafe schema has moved.
+-- ------------------------------------------------------------
+-- The canonical schema file is:
+--     backend/schema.sql
+--
+-- Open that file, paste it into the Supabase SQL Editor, and run it.
+-- It includes tables, constraints, indexes, RLS policies, and
+-- idempotent seed data that preserves existing rows.
+-- ============================================================

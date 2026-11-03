@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en" class="intro-active">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberSafe is a cybersecurity awareness website for students. Learn to spot online threats, protect your accounts, and build safer digital habits.">
+  <meta name="theme-color" content="#10091F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2310091F'/%3E%3Cpath d='M16 4.2 25 7.8v7.4c0 5.3-3.8 9.8-9 11.5-5.2-1.7-9-6.2-9-11.5V7.8l9-3.6Z' fill='%238B5CF6' stroke='%23C4A7FF' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M16 7.2 21.7 9.5v4.9c0 3.4-2.3 6.3-5.7 7.5-3.4-1.2-5.7-4.1-5.7-7.5V9.5L16 7.2Z' fill='%235B21B6'/%3E%3Cpath d='M16 10.1 21.2 19H10.8L16 10.1Z' fill='%23F8F5FF'/%3E%3Cpath d='M16 12.8v3.2' stroke='%2310091F' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='18.1' r='1.35' fill='%2310091F'/%3E%3C/svg%3E">
+  <title>CyberSafe: A Cybersecurity Awareness Website for Students</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- If scripting is unavailable the curtain must never trap the visitor. -->
+  <noscript>
+    <style>
+      .lamp-intro { display: none !important; }
+      html.intro-active,
+      html.intro-active body { overflow: auto !important; }
+      .site-header,
+      #main,
+      .site-footer { opacity: 1 !important; transform: none !important; }
+      .ambient-lamp { display: none !important; }
+    </style>
+  </noscript>
+</head>
+<body class="intro-active">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Lightweight inline icon library: no external icon dependency required. -->
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="logo-shield-gradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#8B5CF6"/>
+        <stop offset="1" stop-color="#7C3AED"/>
+      </linearGradient>
+    </defs>
+    <symbol id="icon-shield-check" viewBox="0 0 24 24">
+      <path d="M12 3 4.8 6.1v5.4c0 4.3 3 8.1 7.2 9.5 4.2-1.4 7.2-5.2 7.2-9.5V6.1L12 3Z"/>
+      <path d="m8.8 12 2.2 2.2 4.4-4.6"/>
+    </symbol>
+    <symbol id="icon-logo-shield" viewBox="0 0 24 24">
+      <path d="M12 2.4 4.4 5.5v5.9c0 4.7 3.2 8.7 7.6 10.2 4.4-1.5 7.6-5.5 7.6-10.2V5.5L12 2.4Z" fill="url(#logo-shield-gradient)" stroke="#C4A7FF" stroke-width="1.1" stroke-linejoin="round"/>
+      <path d="M12 5.1 7.1 7.1v4.3c0 3.2 2.1 5.9 4.9 7 2.8-1.1 4.9-3.8 4.9-7V7.1L12 5.1Z" fill="#5B21B6"/>
+      <path d="M12 7.3 16.8 15.8H7.2L12 7.3Z" fill="#F8F5FF" stroke="#C4A7FF" stroke-width=".6" stroke-linejoin="round"/>
+      <path d="M12 9.8v2.8" stroke="#10091F" stroke-width="1.9" stroke-linecap="round"/>
+      <circle cx="12" cy="14.1" r="1.05" fill="#10091F"/>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3 4.8 6.1v5.4c0 4.3 3 8.1 7.2 9.5 4.2-1.4 7.2-5.2 7.2-9.5V6.1L12 3Z"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6"/>
+    </symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M12 6.5C10.5 5 8.5 4.5 6 4.5H4v13h3c2.2 0 4 .6 5 1.5 1-.9 2.8-1.5 5-1.5h3v-13h-2c-2.5 0-4.5.5-6 2Z"/>
+      <path d="M12 6.5v12.5"/>
+    </symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5"/>
+      <circle cx="12" cy="12" r="4.5"/>
+      <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+      <path d="M9.2 18h5.6M10.3 21h3.4"/>
+      <path d="M8.5 14.5a6 6 0 1 1 7 0c-.9.7-1.3 1.4-1.5 2.5h-4c-.2-1.1-.6-1.8-1.5-2.5Z"/>
+    </symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24">
+      <path d="M16 21v-1.8a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V21"/>
+      <circle cx="9" cy="7" r="3.5"/>
+      <path d="M22 21v-1.8a4 4 0 0 0-3-3.86M16 3.6a3.5 3.5 0 0 1 0 6.8"/>
+    </symbol>
+    <symbol id="icon-key" viewBox="0 0 24 24">
+      <circle cx="8" cy="16" r="4"/>
+      <path d="m11 13 8-8M15.5 8.5 18 11M18 6l3 3"/>
+    </symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24">
+      <path d="M12 4 3.5 19h17L12 4Z"/>
+      <path d="M12 9.5v4.2"/>
+      <circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-eye-off" viewBox="0 0 24 24">
+      <path d="M3 3l18 18"/>
+      <path d="M10.6 6.2A9.8 9.8 0 0 1 12 6c5.5 0 9 6 9 6a17 17 0 0 1-3.1 3.7M6.5 6.5C4.3 8 3 12 3 12s3.5 6 9 6a9.8 9.8 0 0 0 4-.9"/>
+      <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>
+    </symbol>
+    <symbol id="icon-bug" viewBox="0 0 24 24">
+      <rect x="8" y="6" width="8" height="13" rx="4"/>
+      <path d="M12 6V3.5M8 10H4M20 10h-4M8 14H4M20 14h-4M8.6 18 6 20M15.4 18 18 20"/>
+    </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M3 12h18M12 3c2.7 2.6 4 5.6 4 9s-1.3 6.4-4 9c-2.7-2.6-4-5.6-4-9s1.3-6.4 4-9Z"/>
+    </symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24">
+      <rect x="4.5" y="10" width="15" height="10.5" rx="2.5"/>
+      <path d="M8 10V7.5a4 4 0 0 1 8 0V10M12 14v2.5"/>
+    </symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 11v5"/>
+      <circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="m5 12.5 4.5 4.5L19 7.5"/>
+    </symbol>
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+      <path d="M12 5v14M6 13l6 6 6-6"/>
+    </symbol>
+  </svg>
+
+  <!-- ============================================================
+       Lamp intro curtain. Every part of the lamp is its own element
+       so the light, beam and glow can animate independently.
+       ============================================================ -->
+  <div class="lamp-intro" id="lamp-intro" role="dialog" aria-modal="true" aria-labelledby="lamp-intro-title" aria-describedby="lamp-intro-hint">
+    <div class="intro-room" aria-hidden="true">
+      <div class="intro-wall"></div>
+      <div class="intro-ambient"></div>
+      <div class="intro-floor"></div>
+      <div class="intro-vignette"></div>
+    </div>
+
+    <p class="intro-brand">
+      <span class="intro-brand-mark" aria-hidden="true">
+        <svg class="icon" focusable="false"><use href="#icon-logo-shield"></use></svg>
+      </span>
+      <span class="intro-brand-name">Cyber<span>Safe</span></span>
+    </p>
+
+    <div class="intro-frame">
+      <div class="lamp-diorama" id="intro-diorama">
+        <div class="lamp-surface" aria-hidden="true"></div>
+        <div class="lamp-bloom" aria-hidden="true"></div>
+        <div class="lamp-beam" aria-hidden="true">
+          <span class="lamp-beam-core"></span>
+        </div>
+        <div class="lamp-pool" aria-hidden="true"></div>
+
+        <svg class="lamp-body" viewBox="0 0 420 480" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="lamp-stem-grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#1B1033"/>
+              <stop offset=".26" stop-color="#4A3568"/>
+              <stop offset=".52" stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#1B1033"/>
+            </linearGradient>
+            <radialGradient id="lamp-dome-grad" cx=".38" cy=".08" r=".98">
+              <stop offset="0" stop-color="#5B21B6"/>
+              <stop offset=".42" stop-color="#2B1A49"/>
+              <stop offset="1" stop-color="#1B1033"/>
+            </radialGradient>
+            <radialGradient id="lamp-base-grad" cx=".5" cy=".16" r=".92">
+              <stop offset="0" stop-color="#5B21B6"/>
+              <stop offset=".55" stop-color="#24163D"/>
+              <stop offset="1" stop-color="#10091F"/>
+            </radialGradient>
+            <filter id="lamp-blur-lg" x="-70%" y="-70%" width="240%" height="240%">
+              <feGaussianBlur stdDeviation="10"/>
+            </filter>
+            <filter id="lamp-blur-sm" x="-70%" y="-70%" width="240%" height="240%">
+              <feGaussianBlur stdDeviation="4"/>
+            </filter>
+          </defs>
+
+          <ellipse cx="210" cy="410" rx="134" ry="20" fill="#080410" opacity=".72" filter="url(#lamp-blur-lg)"/>
+
+          <ellipse cx="210" cy="404" rx="78" ry="20" fill="url(#lamp-base-grad)"/>
+          <ellipse cx="210" cy="398" rx="62" ry="13" fill="#1B1033" stroke="rgba(124, 58, 237, .2)"/>
+          <ellipse cx="210" cy="398" rx="18" ry="5.5" fill="#392750" stroke="rgba(167, 139, 250, .16)"/>
+
+          <path d="M201 250 219 250 215 397 205 397Z" fill="url(#lamp-stem-grad)"/>
+          <path d="M207.6 252h1.6l-.8 143h-1.6z" fill="rgba(216, 204, 234, .18)"/>
+
+          <circle cx="210" cy="248" r="15" fill="url(#lamp-base-grad)" stroke="rgba(139, 92, 246, .24)"/>
+          <circle cx="210" cy="248" r="5" fill="#1B1033" stroke="rgba(139, 92, 246, .3)"/>
+
+          <path d="M136 262C140 202 172 176 210 176s70 26 74 86Z" fill="url(#lamp-dome-grad)" stroke="rgba(167, 139, 250, .16)"/>
+          <path d="M154 250c2-40 22-60 48-64" fill="none" stroke="rgba(216, 204, 234, .26)" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="210" cy="178" r="6" fill="#392750" stroke="rgba(167, 139, 250, .22)"/>
+
+          <ellipse cx="210" cy="262" rx="74" ry="15" fill="#10091F" stroke="rgba(124, 58, 237, .26)"/>
+          <ellipse class="lamp-rim-spill" cx="210" cy="263" rx="66" ry="12" filter="url(#lamp-blur-sm)"/>
+          <ellipse class="lamp-bulb" cx="210" cy="262" rx="50" ry="8.5"/>
+
+          <circle cx="282" cy="262" r="4" fill="#5B21B6" stroke="rgba(167, 139, 250, .28)"/>
+        </svg>
+
+        <div class="lamp-cord" id="intro-cord" aria-hidden="true"></div>
+        <button class="lamp-handle" id="intro-handle" type="button" aria-label="Pull the lamp switch to enter CyberSafe" aria-describedby="lamp-intro-hint">
+          <span class="lamp-handle-ring" aria-hidden="true"></span>
+          <span class="lamp-handle-grip" aria-hidden="true"></span>
+        </button>
+        <span class="lamp-cue" aria-hidden="true">
+          <svg class="icon" focusable="false"><use href="#icon-arrow-down"></use></svg>
+          Drag
+        </span>
+      </div>
+
+      <div class="intro-copy">
+        <p class="intro-kicker">Cybersecurity awareness for students</p>
+        <p class="intro-title" id="lamp-intro-title">Pull the switch to enter CyberSafe.</p>
+        <p class="intro-hint" id="lamp-intro-hint">Drag the handle down, or focus it and press Enter.</p>
+      </div>
+    </div>
+
+    <button class="intro-skip" type="button" data-skip-intro>Skip intro</button>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="CyberSafe home">
+        <span class="brand-mark">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-logo-shield"></use></svg>
+        </span>
+        <span class="brand-name">Cyber<span>Safe</span></span>
+      </a>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li class="nav-logo">
+            <button class="nav-logo-btn" id="admin-logo-trigger" type="button" aria-label="Open Admin Login" aria-haspopup="dialog" aria-controls="admin-dialog" title="Admin Login">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-logo-shield"></use></svg>
+            </button>
+          </li>
+          <li><a class="nav-link" href="#home" aria-current="location">Home</a></li>
+          <li><a class="nav-link" href="#learn">Learn</a></li>
+          <li><a class="nav-link" href="#modules">Module</a></li>
+          <li><a class="nav-link" href="#quiz">Quiz</a></li>
+          <li><a class="nav-link" href="#tips">Safety Tips</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-cta">
+            <a class="btn btn-primary btn-small" href="#learn">
+              Start Learning
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow-right"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+        <svg class="icon menu-icon-open" aria-hidden="true" focusable="false"><use href="#icon-menu"></use></svg>
+        <svg class="icon menu-icon-close" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero -->
+    <section class="hero" id="home" data-spy aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Cybersecurity awareness for students
+          </p>
+
+          <h1 id="hero-title">CyberSafe: A <span class="text-gradient">Cybersecurity Awareness</span> Website for Students</h1>
+
+          <p class="hero-tagline">
+            Learn<span aria-hidden="true">.</span> Practice<span aria-hidden="true">.</span> Stay Safe<span aria-hidden="true">.</span>
+          </p>
+
+          <p class="hero-description">
+            Build your digital defense with simple lessons, interactive challenges, and practical tips to protect yourself in today's connected world.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#learn">
+              Start Learning
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow-right"></use></svg>
+            </a>
+            <a class="btn btn-secondary" href="#tips">Explore Safety Tips</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div class="stat">
+              <dt>06</dt>
+              <dd>Core topics</dd>
+            </div>
+            <div class="stat">
+              <dt>03</dt>
+              <dd>Quick safety habits</dd>
+            </div>
+            <div class="stat">
+              <dt>100%</dt>
+              <dd>Student focused</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-shell">
+            <div class="visual-frame">
+              <div class="visual-topbar" aria-hidden="true">
+                <span class="visual-label"><span class="status-dot"></span>CyberSafe // Digital defense</span>
+                <span class="visual-dots"><i></i><i></i><i></i></span>
+              </div>
+
+              <svg class="hero-art" viewBox="0 0 600 520" fill="none" role="img" aria-labelledby="hero-art-title hero-art-desc" xmlns="http://www.w3.org/2000/svg">
+                <title id="hero-art-title">A laptop protected by a glowing digital shield</title>
+                <desc id="hero-art-desc">A stylized laptop sits below a holographic shield and lock, surrounded by orbit lines and floating cards about phishing, two-factor authentication, privacy, and strong passwords.</desc>
+
+                <defs>
+                  <linearGradient id="art-blue" x1="120" y1="70" x2="480" y2="450" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#C4A7FF"/>
+                    <stop offset=".52" stop-color="#8B5CF6"/>
+                    <stop offset="1" stop-color="#8B5CF6"/>
+                  </linearGradient>
+                  <linearGradient id="art-shield" x1="300" y1="76" x2="300" y2="288" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#C4A7FF" stop-opacity=".3"/>
+                    <stop offset=".55" stop-color="#8B5CF6" stop-opacity=".12"/>
+                    <stop offset="1" stop-color="#8B5CF6" stop-opacity=".04"/>
+                  </linearGradient>
+                  <linearGradient id="art-screen" x1="300" y1="292" x2="300" y2="468" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#24163D"/>
+                    <stop offset="1" stop-color="#1B1033"/>
+                  </linearGradient>
+                  <linearGradient id="art-base" x1="140" y1="472" x2="460" y2="508" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2B1A49"/>
+                    <stop offset="1" stop-color="#1B1033"/>
+                  </linearGradient>
+                  <radialGradient id="art-aura" cx=".5" cy=".5" r=".5">
+                    <stop stop-color="#8B5CF6" stop-opacity=".34"/>
+                    <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="art-beam" x1="300" y1="290" x2="300" y2="220" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#C4A7FF" stop-opacity=".24"/>
+                    <stop offset="1" stop-color="#C4A7FF" stop-opacity="0"/>
+                  </linearGradient>
+                  <filter id="art-glow" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur stdDeviation="7" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                  <filter id="art-soft" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur stdDeviation="3"/>
+                  </filter>
+                </defs>
+
+                <circle cx="300" cy="238" r="225" fill="url(#art-aura)"/>
+
+                <!-- Orbit and network details -->
+                <g fill="none">
+                  <ellipse cx="300" cy="232" rx="232" ry="158" transform="rotate(-16 300 232)" stroke="rgba(184, 169, 204, .17)" stroke-dasharray="2 9"/>
+                  <ellipse cx="300" cy="232" rx="178" ry="112" transform="rotate(18 300 232)" stroke="rgba(196, 167, 255, .18)"/>
+                </g>
+                <g stroke="rgba(184, 169, 204, .14)" stroke-width="1">
+                  <path d="M92 252 155 190 206 246"/>
+                  <path d="M421 143 478 197 516 162"/>
+                  <path d="M398 382 456 351"/>
+                </g>
+                <g fill="#C4A7FF" opacity=".7">
+                  <circle cx="92" cy="252" r="3"/>
+                  <circle cx="155" cy="190" r="2"/>
+                  <circle cx="478" cy="197" r="2.4"/>
+                  <circle cx="516" cy="162" r="2"/>
+                  <circle cx="456" cy="351" r="3"/>
+                </g>
+                <g fill="#8B5CF6" opacity=".65">
+                  <circle cx="206" cy="246" r="2"/>
+                  <circle cx="398" cy="382" r="2"/>
+                  <circle cx="421" cy="143" r="2.2"/>
+                </g>
+
+                <!-- Hologram beam and shield -->
+                <path d="M252 298h96l-22-54h-52l-22 54Z" fill="url(#art-beam)"/>
+                <ellipse cx="300" cy="208" rx="104" ry="126" fill="url(#art-aura)" opacity=".45"/>
+
+                <g filter="url(#art-glow)">
+                  <path d="M300 74 371 100v74c0 46-29 83-71 104-42-21-71-58-71-104v-74l71-26Z" fill="url(#art-shield)" stroke="url(#art-blue)" stroke-width="2.4"/>
+                  <path d="M300 94 354 114v58c0 36-22 66-54 84-32-18-54-48-54-84v-58l54-20Z" fill="none" stroke="rgba(196, 167, 255, .34)" stroke-width="1"/>
+                </g>
+                <g>
+                  <rect x="282" y="176" width="36" height="30" rx="6" fill="#10091F" stroke="#C4A7FF" stroke-width="2"/>
+                  <path d="M291 176v-9a9 9 0 0 1 18 0v9" fill="none" stroke="#C4A7FF" stroke-width="2"/>
+                  <circle cx="300" cy="190" r="2.8" fill="#C4A7FF"/>
+                  <path d="M300 193v5" stroke="#C4A7FF" stroke-width="2" stroke-linecap="round"/>
+                </g>
+
+                <!-- Laptop -->
+                <ellipse cx="300" cy="510" rx="168" ry="10" fill="#080410" opacity=".55" filter="url(#art-soft)"/>
+                <rect x="158" y="292" width="284" height="176" rx="18" fill="#1B1033" stroke="rgba(184, 169, 204, .28)" stroke-width="1.5"/>
+                <rect x="171" y="305" width="258" height="142" rx="9" fill="url(#art-screen)" stroke="rgba(196, 167, 255, .18)"/>
+                <g stroke="rgba(196, 167, 255, .11)" stroke-width="1">
+                  <path d="M171 338h258M171 370h258M171 402h258"/>
+                  <path d="M214 305v142M257 305v142M300 305v142M343 305v142M386 305v142"/>
+                </g>
+                <text x="300" y="436" text-anchor="middle" fill="#C4A7FF" fill-opacity=".65" font-family="Inter, sans-serif" font-size="8" font-weight="600" letter-spacing="2.6">SECURE LEARNING</text>
+                <rect x="252" y="464" width="96" height="6" rx="3" fill="#392750"/>
+                <path d="M136 472h328l37 26c3 2 1 7-3 7H102c-4 0-6-5-3-7l37-26Z" fill="url(#art-base)" stroke="rgba(184, 169, 204, .24)"/>
+                <path d="M160 477h280" stroke="rgba(196, 167, 255, .35)" stroke-width="2" stroke-linecap="round"/>
+                <g stroke="rgba(184, 169, 204, .2)" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M196 489h208M216 498h168"/>
+                </g>
+
+                <!-- Floating learning cards -->
+                <g class="art-float art-float--one">
+                  <rect x="32" y="112" width="172" height="68" rx="14" fill="#1B1033" fill-opacity=".95" stroke="rgba(184, 169, 204, .24)"/>
+                  <circle cx="59" cy="146" r="15" fill="rgba(196, 167, 255, .1)" stroke="rgba(196, 167, 255, .32)"/>
+                  <path d="M59 138.5 65 141v5.1c0 3-2 5.6-6 6.9-4-1.3-6-3.9-6-6.9V141l6-2.5Z" fill="none" stroke="#C4A7FF" stroke-width="1.5"/>
+                  <text x="84" y="141" fill="#F8F5FF" font-family="Inter, sans-serif" font-size="11.5" font-weight="600">Phishing attempt</text>
+                  <text x="84" y="158" fill="#B8A9CC" font-family="Inter, sans-serif" font-size="9.5">Learn the warning signs</text>
+                </g>
+
+                <g class="art-float art-float--two">
+                  <rect x="414" y="92" width="160" height="66" rx="14" fill="#1B1033" fill-opacity=".95" stroke="rgba(184, 169, 204, .24)"/>
+                  <circle cx="441" cy="125" r="15" fill="rgba(139, 92, 246, .14)" stroke="rgba(139, 92, 246, .38)"/>
+                  <rect x="435.5" y="123" width="11" height="9" rx="2" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+                  <path d="M438 123v-3a3 3 0 0 1 6 0v3" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+                  <text x="466" y="121" fill="#F8F5FF" font-family="Inter, sans-serif" font-size="11.5" font-weight="600">Two-factor</text>
+                  <text x="466" y="138" fill="#B8A9CC" font-family="Inter, sans-serif" font-size="9.5">Extra protection</text>
+                </g>
+
+                <g class="art-float art-float--three">
+                  <rect x="24" y="330" width="172" height="64" rx="14" fill="#1B1033" fill-opacity=".95" stroke="rgba(184, 169, 204, .24)"/>
+                  <circle cx="51" cy="362" r="15" fill="rgba(139, 92, 246, .14)" stroke="rgba(139, 92, 246, .36)"/>
+                  <circle cx="47" cy="365" r="4" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+                  <path d="m50 362 7-7M54.5 357.5 57 360" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+                  <text x="76" y="359" fill="#F8F5FF" font-family="Inter, sans-serif" font-size="11.5" font-weight="600">Password strength</text>
+                  <g>
+                    <rect x="76" y="370" width="26" height="4" rx="2" fill="#C4A7FF"/>
+                    <rect x="106" y="370" width="26" height="4" rx="2" fill="#C4A7FF"/>
+                    <rect x="136" y="370" width="26" height="4" rx="2" fill="#C4A7FF"/>
+                    <rect x="166" y="370" width="14" height="4" rx="2" fill="rgba(184, 169, 204, .25)"/>
+                  </g>
+                </g>
+
+                <g class="art-float art-float--four">
+                  <rect x="420" y="336" width="154" height="64" rx="14" fill="#1B1033" fill-opacity=".95" stroke="rgba(184, 169, 204, .24)"/>
+                  <circle cx="447" cy="368" r="15" fill="rgba(196, 167, 255, .1)" stroke="rgba(196, 167, 255, .32)"/>
+                  <path d="M439 368s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6Z" fill="none" stroke="#C4A7FF" stroke-width="1.5"/>
+                  <circle cx="447" cy="368" r="2.2" fill="#C4A7FF"/>
+                  <text x="472" y="365" fill="#F8F5FF" font-family="Inter, sans-serif" font-size="11.5" font-weight="600">Privacy check</text>
+                  <text x="472" y="382" fill="#B8A9CC" font-family="Inter, sans-serif" font-size="9.5">Review your settings</text>
+                </g>
+
+                <g fill="#C4A7FF" opacity=".8">
+                  <path d="M118 76l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z"/>
+                  <path d="M520 270l2.4 5.6 5.6 2.4-5.6 2.4-2.4 5.6-2.4-5.6-5.6-2.4 5.6-2.4 2.4-5.6Z" fill="#8B5CF6"/>
+                  <circle cx="78" cy="432" r="2.5"/>
+                </g>
+              </svg>
+
+              <div class="visual-caption">
+                <span class="caption-icon">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-shield"></use></svg>
+                </span>
+                <p>
+                  <strong>Your digital defense</strong>
+                  <span>One smart habit at a time.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature highlights -->
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Why CyberSafe</p>
+          <h2 id="features-title">Four ways to build your digital confidence</h2>
+          <p class="section-lede">Clear explanations, real-world examples, and practical habits that fit the way students live online.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card accent-blue">
+            <div class="feature-top">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+              </span>
+              <span class="feature-index" aria-hidden="true">01</span>
+            </div>
+            <h3>Cybersecurity Lessons</h3>
+            <p>Learn about phishing, online scams, password security, malware, and privacy protection.</p>
+          </article>
+
+          <article class="feature-card accent-cyan">
+            <div class="feature-top">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-target"></use></svg>
+              </span>
+              <span class="feature-index" aria-hidden="true">02</span>
+            </div>
+            <h3>Interactive Quizzes</h3>
+            <p>Test your understanding of common cybersecurity threats.</p>
+          </article>
+
+          <article class="feature-card accent-violet">
+            <div class="feature-top">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-lightbulb"></use></svg>
+              </span>
+              <span class="feature-index" aria-hidden="true">03</span>
+            </div>
+            <h3>Online Safety Tips</h3>
+            <p>Discover practical ways to protect your accounts and personal information.</p>
+          </article>
+
+          <article class="feature-card accent-sky">
+            <div class="feature-top">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-users"></use></svg>
+              </span>
+              <span class="feature-index" aria-hidden="true">04</span>
+            </div>
+            <h3>Responsible Digital Citizenship</h3>
+            <p>Learn ethical and responsible ways to use technology and the internet.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning preview -->
+    <section class="section learn" id="learn" data-spy aria-labelledby="learn-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Learning library</p>
+          <h2 id="learn-title" tabindex="-1">Explore What You Can Learn</h2>
+          <p class="section-lede">Start with the essentials. Each topic breaks down a real online risk and the simple habits that reduce it.</p>
+        </div>
+
+        <div class="topic-grid">
+          <article class="topic-card" id="topic-passwords">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-key"></use></svg>
+              </span>
+              <span class="topic-tag">Accounts</span>
+            </div>
+            <h3>Password Security</h3>
+            <p>Create strong, unique passwords and add an extra layer of protection with two-factor authentication.</p>
+            <div class="topic-actions">
+              <button class="topic-link" type="button" data-topic="passwords" aria-haspopup="dialog" aria-label="Learn More: Password Security topic preview">
+                Learn More
+                <span class="link-arrow" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+                </span>
+              </button>
+              <button class="topic-quiz" type="button" data-quiz-topic="passwords" aria-label="Take the Password Security quiz">Take Quiz</button>
+            </div>
+          </article>
+
+          <article class="topic-card" id="topic-phishing">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+              </span>
+              <span class="topic-tag">Threats</span>
+            </div>
+            <h3>Phishing and Online Scams</h3>
+            <p>Spot suspicious messages, fake links, and urgent requests before they can catch you off guard.</p>
+            <div class="topic-actions">
+              <button class="topic-link" type="button" data-topic="phishing" aria-haspopup="dialog" aria-label="Learn More: Phishing and Online Scams topic preview">
+                Learn More
+                <span class="link-arrow" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+                </span>
+              </button>
+              <button class="topic-quiz" type="button" data-quiz-topic="phishing" aria-label="Take the Phishing and Online Scams quiz">Take Quiz</button>
+            </div>
+          </article>
+
+          <article class="topic-card" id="topic-privacy">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-eye-off"></use></svg>
+              </span>
+              <span class="topic-tag">Privacy</span>
+            </div>
+            <h3>Social Media Privacy</h3>
+            <p>Take control of what you share, who can see it, and how your online footprint grows.</p>
+            <div class="topic-actions">
+              <button class="topic-link" type="button" data-topic="privacy" aria-haspopup="dialog" aria-label="Learn More: Social Media Privacy topic preview">
+                Learn More
+                <span class="link-arrow" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+                </span>
+              </button>
+              <button class="topic-quiz" type="button" data-quiz-topic="privacy" aria-label="Take the Social Media Privacy quiz">Take Quiz</button>
+            </div>
+          </article>
+
+          <article class="topic-card" id="topic-malware">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-bug"></use></svg>
+              </span>
+              <span class="topic-tag">Devices</span>
+            </div>
+            <h3>Malware and Viruses</h3>
+            <p>Understand how malicious software spreads and how updates and safe downloads keep devices protected.</p>
+            <div class="topic-actions">
+              <button class="topic-link" type="button" data-topic="malware" aria-haspopup="dialog" aria-label="Learn More: Malware and Viruses topic preview">
+                Learn More
+                <span class="link-arrow" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+                </span>
+              </button>
+              <button class="topic-quiz" type="button" data-quiz-topic="malware" aria-label="Take the Malware and Viruses quiz">Take Quiz</button>
+            </div>
+          </article>
+
+          <article class="topic-card" id="topic-browsing">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-globe"></use></svg>
+              </span>
+              <span class="topic-tag">Browsing</span>
+            </div>
+            <h3>Safe Browsing</h3>
+            <p>Recognize risky websites, insecure connections, and browser warnings while you explore online.</p>
+            <div class="topic-actions">
+              <button class="topic-link" type="button" data-topic="browsing" aria-haspopup="dialog" aria-label="Learn More: Safe Browsing topic preview">
+                Learn More
+                <span class="link-arrow" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+                </span>
+              </button>
+              <button class="topic-quiz" type="button" data-quiz-topic="browsing" aria-label="Take the Safe Browsing quiz">Take Quiz</button>
+            </div>
+          </article>
+
+          <article class="topic-card" id="topic-citizenship">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-compass"></use></svg>
+              </span>
+              <span class="topic-tag">Community</span>
+            </div>
+            <h3>Digital Citizenship</h3>
+            <p>Use technology ethically, respect others online, and contribute to healthier digital spaces.</p>
+            <div class="topic-actions">
+              <button class="topic-link" type="button" data-topic="citizenship" aria-haspopup="dialog" aria-label="Learn More: Digital Citizenship topic preview">
+                Learn More
+                <span class="link-arrow" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+                </span>
+              </button>
+              <button class="topic-quiz" type="button" data-quiz-topic="citizenship" aria-label="Take the Digital Citizenship quiz">Take Quiz</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning modules -->
+    <section class="section modules" id="modules" data-spy aria-labelledby="modules-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Learning modules</p>
+          <h2 id="modules-title">Choose a Learning Module</h2>
+          <p class="section-lede">Six guided paths organize the CyberSafe lessons and quizzes into a clear starting point. Pick a module to see what it covers.</p>
+        </div>
+
+        <div class="topic-grid module-grid" id="module-grid">
+          <article class="topic-card module-card">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-shield"></use></svg>
+              </span>
+              <span class="topic-tag">Foundations</span>
+            </div>
+            <h3>Introduction to Cybersecurity</h3>
+            <p>Understand what cybersecurity means, why it matters, and how awareness protects students online.</p>
+            <button class="topic-link module-open" type="button" data-module="intro" aria-expanded="false" aria-controls="module-detail" aria-label="Explore Module: Introduction to Cybersecurity">
+              Explore Module
+              <span class="link-arrow" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+              </span>
+            </button>
+          </article>
+
+          <article class="topic-card module-card">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+              </span>
+              <span class="topic-tag">Threats</span>
+            </div>
+            <h3>Common Cyber Threats</h3>
+            <p>Recognize phishing, malware, ransomware, online scams, and social engineering before they catch you.</p>
+            <button class="topic-link module-open" type="button" data-module="threats" aria-expanded="false" aria-controls="module-detail" aria-label="Explore Module: Common Cyber Threats">
+              Explore Module
+              <span class="link-arrow" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+              </span>
+            </button>
+          </article>
+
+          <article class="topic-card module-card">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-key"></use></svg>
+              </span>
+              <span class="topic-tag">Accounts</span>
+            </div>
+            <h3>Password Security</h3>
+            <p>Build strong password habits and add extra protection with multi-factor authentication.</p>
+            <button class="topic-link module-open" type="button" data-module="passwords" aria-expanded="false" aria-controls="module-detail" aria-label="Explore Module: Password Security">
+              Explore Module
+              <span class="link-arrow" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+              </span>
+            </button>
+          </article>
+
+          <article class="topic-card module-card">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-eye-off"></use></svg>
+              </span>
+              <span class="topic-tag">Privacy</span>
+            </div>
+            <h3>Online Privacy and Data Protection</h3>
+            <p>Protect personal information, share safely on social media, and take control of privacy settings.</p>
+            <button class="topic-link module-open" type="button" data-module="privacy" aria-expanded="false" aria-controls="module-detail" aria-label="Explore Module: Online Privacy and Data Protection">
+              Explore Module
+              <span class="link-arrow" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+              </span>
+            </button>
+          </article>
+
+          <article class="topic-card module-card">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-globe"></use></svg>
+              </span>
+              <span class="topic-tag">Browsing</span>
+            </div>
+            <h3>Safe Internet Practices</h3>
+            <p>Browse confidently, spot suspicious sites and links, and avoid unsafe downloads.</p>
+            <button class="topic-link module-open" type="button" data-module="browsing" aria-expanded="false" aria-controls="module-detail" aria-label="Explore Module: Safe Internet Practices">
+              Explore Module
+              <span class="link-arrow" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+              </span>
+            </button>
+          </article>
+
+          <article class="topic-card module-card">
+            <div class="topic-head">
+              <span class="icon-tile">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-compass"></use></svg>
+              </span>
+              <span class="topic-tag">Community</span>
+            </div>
+            <h3>Cyber Ethics and Responsibility</h3>
+            <p>Use technology responsibly, respect privacy, and practice ethical behavior online.</p>
+            <button class="topic-link module-open" type="button" data-module="citizenship" aria-expanded="false" aria-controls="module-detail" aria-label="Explore Module: Cyber Ethics and Responsibility">
+              Explore Module
+              <span class="link-arrow" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-arrow-right"></use></svg>
+              </span>
+            </button>
+          </article>
+        </div>
+
+        <noscript>
+          <p class="module-noscript">The module details need JavaScript enabled. You can still browse every lesson in the Learn section.</p>
+        </noscript>
+
+        <div class="module-detail" id="module-detail" hidden aria-labelledby="module-detail-title">
+          <div class="module-detail-top">
+            <button class="quiz-back" type="button" data-module-back>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow-right"></use></svg>
+              Back to modules
+            </button>
+            <p class="module-detail-index" id="module-detail-index">Module 01</p>
+          </div>
+
+          <div class="module-detail-head">
+            <span class="icon-tile" id="module-detail-icon" aria-hidden="true">
+              <svg class="icon" focusable="false"><use href="#icon-shield"></use></svg>
+            </span>
+            <div>
+              <p class="eyebrow" id="module-detail-kicker">Foundations</p>
+              <h3 id="module-detail-title" tabindex="-1">Introduction to Cybersecurity</h3>
+            </div>
+          </div>
+
+          <div class="module-detail-copy" id="module-detail-copy"></div>
+
+          <div class="module-detail-body">
+            <section class="module-detail-section" aria-labelledby="module-detail-cover-title">
+              <h4 class="module-detail-subtitle" id="module-detail-cover-title">What you'll cover</h4>
+              <ul class="dialog-points module-detail-points" id="module-detail-points"></ul>
+            </section>
+
+            <section class="module-detail-section" aria-labelledby="module-detail-lessons-title">
+              <h4 class="module-detail-subtitle" id="module-detail-lessons-title">Lessons in this module</h4>
+              <div class="module-lessons" id="module-detail-lessons"></div>
+            </section>
+          </div>
+
+          <p class="module-detail-note" id="module-detail-note">Lesson previews open the existing topic dialog. Quizzes open in the Quiz section.</p>
+
+          <div class="module-detail-footer">
+            <button class="btn btn-secondary" type="button" data-module-back>Back to modules</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz preview -->
+    <section class="section quiz" id="quiz" data-spy aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="quiz-panel">
+          <div class="quiz-copy">
+            <p class="eyebrow">Interactive quizzes</p>
+            <h2 id="quiz-title">Test your instincts before a scammer does.</h2>
+            <p>Scenario-based questions turn everyday online moments into quick decisions, helping you recognize the warning signs when it matters.</p>
+
+            <ul class="quiz-chips" aria-label="Quiz overview">
+              <li>6 lessons</li>
+              <li>5 questions each</li>
+              <li>Instant feedback</li>
+              <li>Retake anytime</li>
+            </ul>
+
+            <div class="quiz-note">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-info"></use></svg>
+              <p><strong>Pick any lesson to begin.</strong> Each quiz is scored in your browser, and you can retake it as often as you like.</p>
+            </div>
+
+            <a class="btn btn-secondary" href="#learn">
+              Review the lessons
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow-right"></use></svg>
+            </a>
+          </div>
+
+          <div class="quiz-art" aria-hidden="true">
+            <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="quiz-grad" x1="110" y1="70" x2="310" y2="290" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#C4A7FF"/>
+                  <stop offset=".52" stop-color="#8B5CF6"/>
+                  <stop offset="1" stop-color="#8B5CF6"/>
+                </linearGradient>
+                <radialGradient id="quiz-aura" cx=".5" cy=".5" r=".5">
+                  <stop stop-color="#8B5CF6" stop-opacity=".3"/>
+                  <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <circle cx="210" cy="180" r="155" fill="url(#quiz-aura)"/>
+              <circle cx="210" cy="180" r="138" fill="none" stroke="rgba(184, 169, 204, .16)" stroke-dasharray="3 9"/>
+              <circle cx="210" cy="180" r="105" fill="none" stroke="rgba(196, 167, 255, .15)"/>
+
+              <path d="M210 66 308 123v112l-98 57-98-57V123l98-57Z" fill="#1B1033" fill-opacity=".88" stroke="url(#quiz-grad)" stroke-width="2"/>
+              <path d="M210 88 286 132v94l-76 44-76-44v-94l76-44Z" fill="none" stroke="rgba(196, 167, 255, .2)"/>
+
+              <text x="210" y="221" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="124" font-weight="700" fill="url(#quiz-grad)">?</text>
+
+              <g class="quiz-chip quiz-chip--one">
+                <circle cx="76" cy="98" r="23" fill="#1B1033" stroke="rgba(139, 92, 246, .5)"/>
+                <text x="76" y="104" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#C4A7FF">A</text>
+              </g>
+              <g class="quiz-chip quiz-chip--two">
+                <circle cx="341" cy="101" r="23" fill="#1B1033" stroke="rgba(139, 92, 246, .5)"/>
+                <text x="341" y="107" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#C4A7FF">B</text>
+              </g>
+              <g class="quiz-chip quiz-chip--three">
+                <circle cx="94" cy="279" r="23" fill="#1B1033" stroke="rgba(184, 169, 204, .3)"/>
+                <text x="94" y="285" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#B8A9CC">C</text>
+              </g>
+              <g class="quiz-chip quiz-chip--four">
+                <circle cx="325" cy="272" r="25" fill="rgba(196, 167, 255, .1)" stroke="#C4A7FF"/>
+                <path d="m314 272 8 8 15-16" fill="none" stroke="#C4A7FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+
+              <g fill="#C4A7FF" opacity=".8">
+                <path d="M356 43l2.4 5.6 5.6 2.4-5.6 2.4L356 59l-2.4-5.6-5.6-2.4 5.6-2.4L356 43Z"/>
+                <circle cx="55" cy="192" r="2.4"/>
+                <circle cx="370" cy="320" r="2.4" fill="#8B5CF6"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="quiz-workspace" id="quiz-workspace">
+          <div class="quiz-hub" id="quiz-hub">
+            <div class="quiz-hub-head">
+              <h3 id="quiz-hub-title" tabindex="-1">Choose a lesson quiz</h3>
+              <p>Five questions per lesson. Answer at your own pace and review the explanations when you finish.</p>
+            </div>
+            <div class="quiz-lesson-grid" id="quiz-lesson-grid"></div>
+            <noscript>
+              <p class="quiz-noscript">The quizzes need JavaScript enabled. Please enable it and reload the page to take a quiz.</p>
+            </noscript>
+          </div>
+
+          <div class="quiz-stage" id="quiz-stage" hidden>
+            <div class="quiz-stage-head">
+              <button class="quiz-back" type="button" id="quiz-back">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow-right"></use></svg>
+                All quizzes
+              </button>
+              <p class="quiz-stage-title" id="quiz-lesson-title">Lesson quiz</p>
+              <p class="quiz-counter" id="quiz-counter">Question 1 of 5</p>
+            </div>
+
+            <div class="quiz-progress" id="quiz-progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
+              <span class="quiz-progress-fill" id="quiz-progress-fill"></span>
+            </div>
+
+            <p class="quiz-stage-lede">Five questions. Choose the best answer, then review the explanations at the end.</p>
+
+            <form class="quiz-form" id="quiz-form" novalidate>
+              <fieldset class="quiz-fieldset">
+                <legend class="quiz-question" id="quiz-question" tabindex="-1">Question</legend>
+                <div class="quiz-options" id="quiz-options"></div>
+              </fieldset>
+
+              <p class="quiz-hint" id="quiz-hint">Select an answer to continue.</p>
+
+              <div class="quiz-actions">
+                <button class="btn btn-secondary" type="button" id="quiz-prev">Previous</button>
+                <button class="btn btn-primary" type="button" id="quiz-next">Next Question</button>
+                <button class="btn btn-primary" type="button" id="quiz-submit" hidden>Submit Quiz</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="quiz-results" id="quiz-results" hidden>
+            <p class="eyebrow">Quiz complete</p>
+            <h3 id="quiz-results-title" tabindex="-1">Lesson quiz results</h3>
+            <p class="quiz-results-message" id="quiz-results-message"></p>
+
+            <div class="quiz-score-grid">
+              <div class="quiz-score-main">
+                <span class="quiz-score-value" id="quiz-score">0/5</span>
+                <span class="quiz-score-label">Correct answers</span>
+              </div>
+              <div class="quiz-score-stat">
+                <span class="quiz-score-stat-value" id="quiz-percent">0%</span>
+                <span class="quiz-score-label">Score</span>
+              </div>
+              <div class="quiz-score-stat">
+                <span class="quiz-score-stat-value" id="quiz-wrong">0</span>
+                <span class="quiz-score-label">Incorrect</span>
+              </div>
+            </div>
+
+            <h4 class="quiz-review-title">Review your answers</h4>
+            <ol class="quiz-review" id="quiz-review"></ol>
+
+            <div class="quiz-results-actions">
+              <button class="btn btn-primary" type="button" id="quiz-retake">Retake Quiz</button>
+              <button class="btn btn-secondary" type="button" id="quiz-to-lessons">Back to Lessons</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety tips -->
+    <section class="section tips" id="tips" data-spy aria-labelledby="tips-title">
+      <div class="container">
+        <div class="tips-header">
+          <div>
+            <p class="eyebrow">Safety tips</p>
+            <h2 id="tips-title">Small habits. Stronger protection.</h2>
+          </div>
+          <p class="section-lede">Three simple actions that make a real difference to your everyday digital safety.</p>
+        </div>
+
+        <div class="tips-grid">
+          <article class="tip-card">
+            <span class="tip-number" aria-hidden="true">01</span>
+            <span class="icon-tile">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-lock"></use></svg>
+            </span>
+            <h3>Lock every account</h3>
+            <p>Use a unique passphrase for important accounts and switch on two-factor authentication wherever it is available.</p>
+          </article>
+
+          <article class="tip-card">
+            <span class="tip-number" aria-hidden="true">02</span>
+            <span class="icon-tile">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+            </span>
+            <h3>Pause before you click</h3>
+            <p>Check the sender, inspect the link, and question urgent requests before you act on any message.</p>
+          </article>
+
+          <article class="tip-card">
+            <span class="tip-number" aria-hidden="true">03</span>
+            <span class="icon-tile">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-eye-off"></use></svg>
+            </span>
+            <h3>Share with intention</h3>
+            <p>Review your privacy settings and think twice before posting personal details, locations, or documents.</p>
+          </article>
+        </div>
+
+        <aside class="tip-callout">
+          <span class="caption-icon">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-info"></use></svg>
+          </span>
+          <p><strong>When something feels urgent, slow down.</strong> Verify unexpected requests through a channel you already trust.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="section cta-section" id="start" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <div class="cta-orbit" aria-hidden="true"></div>
+          <div class="cta-orbit cta-orbit--inner" aria-hidden="true"></div>
+          <span class="cta-shield" aria-hidden="true">
+            <svg class="icon" focusable="false"><use href="#icon-shield-check"></use></svg>
+          </span>
+
+          <p class="eyebrow">Take the first step</p>
+          <h2 id="cta-title">Your Digital Safety Starts With You.</h2>
+          <p>Small security habits can make a big difference. Start learning today and build a safer digital future.</p>
+          <a class="btn btn-primary btn-large" href="#learn">
+            Start Your Journey
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow-right"></use></svg>
+          </a>
+          <p class="cta-footnote">Free to explore &middot; No sign-up required</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="about" data-spy aria-labelledby="footer-about-title">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2 class="footer-label" id="footer-about-title">About CyberSafe</h2>
+          <a class="brand" href="#home" aria-label="CyberSafe home">
+            <span class="brand-mark">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-logo-shield"></use></svg>
+            </span>
+            <span class="brand-name">Cyber<span>Safe</span></span>
+          </a>
+          <p>CyberSafe helps students recognize online threats, protect personal information, and practice responsible internet use.</p>
+        </div>
+
+        <nav class="footer-col" aria-labelledby="footer-nav-title">
+          <h2 class="footer-heading" id="footer-nav-title">Quick links</h2>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#modules">Module</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#tips">Safety Tips</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footer-topics-title">
+          <h2 class="footer-heading" id="footer-topics-title">Learning topics</h2>
+          <ul>
+            <li><a href="#topic-passwords">Password Security</a></li>
+            <li><a href="#topic-phishing">Phishing and Online Scams</a></li>
+            <li><a href="#topic-privacy">Social Media Privacy</a></li>
+            <li><a href="#topic-malware">Malware and Viruses</a></li>
+            <li><a href="#topic-browsing">Safe Browsing</a></li>
+            <li><a href="#topic-citizenship">Digital Citizenship</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CyberSafe. All rights reserved.</p>
+        <p class="footer-motto">Learn. Practice. Stay Safe.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Compact lamp that keeps the pull-switch interaction after the reveal. -->
+  <aside class="ambient-lamp" id="ambient-lamp" aria-label="Lamp light control">
+    <div class="ambient-bloom" aria-hidden="true"></div>
+    <svg class="ambient-shade" viewBox="0 0 120 86" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="mini-dome-grad" cx=".4" cy=".1" r=".98">
+          <stop offset="0" stop-color="#5B21B6"/>
+          <stop offset=".45" stop-color="#2B1A49"/>
+          <stop offset="1" stop-color="#1B1033"/>
+        </radialGradient>
+      </defs>
+      <path d="M18 64C21 32 38 12 60 12s39 20 42 52Z" fill="url(#mini-dome-grad)" stroke="rgba(167, 139, 250, .2)"/>
+      <path d="M32 56c2-22 12-34 24-36" fill="none" stroke="rgba(216, 204, 234, .26)" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="60" cy="64" rx="42" ry="9" fill="#10091F" stroke="rgba(124, 58, 237, .28)"/>
+      <ellipse class="ambient-bulb" cx="60" cy="64" rx="33" ry="6.5"/>
+      <circle cx="99" cy="64" r="2.6" fill="#5B21B6"/>
+    </svg>
+    <div class="ambient-cord" id="ambient-cord" aria-hidden="true"></div>
+    <button class="ambient-handle" id="ambient-handle" type="button" aria-label="Pull the lamp switch to change the light color">
+      <span class="ambient-handle-ring" aria-hidden="true"></span>
+      <span class="ambient-handle-grip" aria-hidden="true"></span>
+    </button>
+  </aside>
+
+  <p class="visually-hidden" id="lamp-status" role="status" aria-live="polite"></p>
+
+  <!-- Topic preview dialog -->
+  <dialog class="topic-dialog" id="topic-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-card">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Close topic preview">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg>
+      </button>
+
+      <p class="eyebrow" id="dialog-kicker">Topic preview</p>
+      <h2 id="dialog-title">Password Security</h2>
+      <p class="dialog-copy" id="dialog-copy"></p>
+      <ul class="dialog-points" id="dialog-points"></ul>
+
+      <div class="dialog-actions">
+        <button class="btn btn-primary" type="button" id="dialog-quiz" data-quiz-topic="">Take Quiz</button>
+        <button class="btn btn-secondary" type="button" data-close-dialog>Back to topics</button>
+        <p class="dialog-note">Five questions. Instant feedback.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Admin login and educational content management prototype -->
+  <dialog class="admin-dialog" id="admin-dialog" aria-label="CyberSafe admin area">
+    <div class="admin-shell">
+      <div class="admin-topbar">
+        <p class="admin-brand">
+          <span class="admin-brand-mark" aria-hidden="true">
+            <svg class="icon" focusable="false"><use href="#icon-logo-shield"></use></svg>
+          </span>
+          <span class="admin-brand-name">Cyber<span>Safe</span> Admin</span>
+        </p>
+        <button class="dialog-close" type="button" data-admin-close aria-label="Close admin area">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+
+      <section class="admin-view admin-login" id="admin-login-view" aria-labelledby="admin-dialog-title">
+        <p class="eyebrow">Administrator access</p>
+        <h2 id="admin-dialog-title">Admin Login</h2>
+        <p class="admin-lede">Sign in to access the CyberSafe Admin Panel.</p>
+
+        <div class="admin-notice" id="admin-login-notice" role="note">
+          <strong>Administrator Access.</strong> Enter your administrator credentials to manage educational modules and lessons permanently Secure Administrator Access.
+        </div>
+
+        <form class="admin-form" id="admin-login-form" novalidate>
+          <div class="admin-field">
+            <label for="admin-username">Admin Username</label>
+            <input id="admin-username" name="username" type="text" autocomplete="username" spellcheck="false" required aria-describedby="admin-username-error">
+            <p class="admin-field-error" id="admin-username-error" hidden></p>
+          </div>
+
+          <div class="admin-field">
+            <label for="admin-password">Admin Password</label>
+            <div class="admin-password">
+              <input id="admin-password" name="password" type="password" autocomplete="current-password" required aria-describedby="admin-password-error">
+              <button class="admin-password-toggle" id="admin-password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
+            <p class="admin-field-error" id="admin-password-error" hidden></p>
+          </div>
+
+          <p class="admin-form-error" id="admin-login-error" role="alert" hidden></p>
+
+          <div class="admin-actions">
+            <button class="btn btn-primary" type="submit" id="admin-login-submit">Login</button>
+            <button class="btn btn-secondary" type="button" data-admin-close>Back to Website</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-view admin-panel" id="admin-panel-view" hidden aria-labelledby="admin-panel-title">
+        <div class="admin-panel-head">
+          <div>
+            <p class="eyebrow">Content management</p>
+            <h2 id="admin-panel-title" tabindex="-1">Admin Panel</h2>
+            <p class="admin-lede">View, add, edit, and delete the educational modules and lessons used by CyberSafe.</p>
+          </div>
+          <button class="btn btn-secondary btn-small" type="button" id="admin-logout">Logout</button>
+        </div>
+
+        <div class="admin-notice admin-notice--panel" id="admin-panel-notice" role="note">
+          <strong>Checking database status.</strong> Verifying the CyberSafe backend and Supabase connection...
+        </div>
+
+        <div class="admin-dashboard-stats" id="admin-dashboard-stats">
+          <div class="admin-stat-card">
+            <span class="admin-stat-number" id="stat-total-modules">0</span>
+            <span class="admin-stat-label">Total Modules</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="admin-stat-number" id="stat-total-lessons">0</span>
+            <span class="admin-stat-label">Total Lessons</span>
+          </div>
+          <div class="admin-stat-card admin-stat-card--recent">
+            <span class="admin-stat-label">Recently Added / Updated</span>
+            <span class="admin-stat-recent-title" id="stat-recent-title">Loading...</span>
+          </div>
+        </div>
+
+        <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+
+        <div class="admin-panel-grid">
+          <div class="admin-list-panel">
+            <div class="admin-list-head">
+              <h3>Educational content</h3>
+              <button class="btn btn-primary btn-small" type="button" id="admin-add">Add Content</button>
+            </div>
+            <div class="admin-filter-bar" id="admin-filter-bar">
+              <button class="admin-filter-btn is-active" type="button" data-filter="all">All</button>
+              <button class="admin-filter-btn" type="button" data-filter="module">Modules</button>
+              <button class="admin-filter-btn" type="button" data-filter="lesson">Lessons</button>
+              <button class="admin-filter-btn" type="button" data-filter="quiz">Quizzes</button>
+            </div>
+            <div class="admin-list" id="admin-content-list"></div>
+          </div>
+
+          <div class="admin-editor-panel">
+            <div id="admin-content-editor-view">
+              <h3 id="admin-editor-title">Add educational content</h3>
+              <form class="admin-form admin-content-form" id="admin-content-form" novalidate>
+                <div class="admin-field">
+                  <label for="admin-content-kind">Content type</label>
+                  <select id="admin-content-kind" name="kind" required>
+                    <option value="module">Module</option>
+                    <option value="lesson">Lesson</option>
+                    <option value="quiz">Quiz</option>
+                  </select>
+                </div>
+                <div class="admin-field" id="admin-module-select-wrap" hidden>
+                  <label for="admin-content-module" id="admin-module-select-label">Parent Module</label>
+                  <select id="admin-content-module" name="module_id">
+                    <option value="">-- Select Parent Module --</option>
+                  </select>
+                </div>
+                <div class="admin-field">
+                  <label for="admin-content-title">Title</label>
+                  <input id="admin-content-title" name="title" type="text" required>
+                </div>
+                <div class="admin-field">
+                  <label for="admin-content-category">Category / Tag</label>
+                  <input id="admin-content-category" name="category" type="text" placeholder="e.g. Accounts, Threats, Privacy, Foundations...">
+                </div>
+                <div class="admin-field">
+                  <label for="admin-content-description">Description</label>
+                  <textarea id="admin-content-description" name="description" rows="3" required></textarea>
+                </div>
+                <div class="admin-field" id="admin-content-body-wrap">
+                  <label for="admin-content-body" id="admin-content-body-label">Lesson content / Points</label>
+                  <textarea id="admin-content-body" name="content" rows="5" required></textarea>
+                </div>
+                <p class="admin-form-error" id="admin-content-error" role="alert" hidden></p>
+                <div class="admin-actions">
+                  <button class="btn btn-primary" type="submit" id="admin-content-save">Save Content</button>
+                  <button class="btn btn-secondary" type="button" id="admin-content-cancel" hidden>Cancel</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Quiz Questions Manager View -->
+            <div id="admin-question-manager-view" hidden>
+              <div class="admin-qm-head">
+                <button class="btn btn-secondary btn-small" type="button" id="admin-qm-back">&larr; Back to Content</button>
+                <h3 id="admin-qm-title">Manage Questions</h3>
+              </div>
+              <p class="admin-qm-subtitle" id="admin-qm-subtitle"></p>
+
+              <!-- List of existing questions -->
+              <div class="admin-qm-list" id="admin-qm-list"></div>
+
+              <!-- Question Editor Form -->
+              <div class="admin-qm-form-panel">
+                <h4 id="admin-qm-form-title">Add New Question</h4>
+                <form class="admin-form admin-qm-form" id="admin-qm-form" novalidate>
+                  <div class="admin-field">
+                    <label for="admin-q-text">Question Text</label>
+                    <textarea id="admin-q-text" name="question_text" rows="2" placeholder="Enter question..." required></textarea>
+                  </div>
+                  <div class="admin-field">
+                    <label for="admin-q-opt-0">Option A</label>
+                    <input id="admin-q-opt-0" type="text" placeholder="Option A text" required>
+                  </div>
+                  <div class="admin-field">
+                    <label for="admin-q-opt-1">Option B</label>
+                    <input id="admin-q-opt-1" type="text" placeholder="Option B text" required>
+                  </div>
+                  <div class="admin-field">
+                    <label for="admin-q-opt-2">Option C</label>
+                    <input id="admin-q-opt-2" type="text" placeholder="Option C text" required>
+                  </div>
+                  <div class="admin-field">
+                    <label for="admin-q-opt-3">Option D</label>
+                    <input id="admin-q-opt-3" type="text" placeholder="Option D text" required>
+                  </div>
+                  <div class="admin-field">
+                    <label for="admin-q-correct">Correct Answer</label>
+                    <select id="admin-q-correct" required>
+                      <option value="0">Option A</option>
+                      <option value="1">Option B</option>
+                      <option value="2">Option C</option>
+                      <option value="3">Option D</option>
+                    </select>
+                  </div>
+                  <div class="admin-field">
+                    <label for="admin-q-explanation">Explanation</label>
+                    <textarea id="admin-q-explanation" rows="2" placeholder="Why this answer is correct..."></textarea>
+                  </div>
+                  <p class="admin-form-error" id="admin-qm-error" role="alert" hidden></p>
+                  <div class="admin-actions">
+                    <button class="btn btn-primary btn-small" type="submit" id="admin-qm-save">Save Question</button>
+                    <button class="btn btn-secondary btn-small" type="button" id="admin-qm-cancel" hidden>Cancel</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
